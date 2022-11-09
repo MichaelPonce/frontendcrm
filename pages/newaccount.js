@@ -2,8 +2,26 @@ import React from 'react'
 import Layout from '../components/Layout'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import { useMutation, gql } from '@apollo/client';
+
+
+const NEW_ACCOUNT = gql`
+mutation NuevoUsuario($input: UsuarioInput) {
+    nuevoUsuario(input: $input) {
+    nombre
+    apellido
+    email
+    }
+  }
+`;
+
+
 
 const Newaccount = () => {
+
+    // Mutation For Create New Users
+
+    const [ NuevoUsuario ] = useMutation(NEW_ACCOUNT);
 
     // Form validation
 
@@ -14,15 +32,37 @@ const Newaccount = () => {
             email: '',
             password: ''
         },
-        validationSchema: Yup.object({
+
+        validationSchema: Yup.object ({
             nombre: Yup.string().required('Name Is Required'),
             apellido: Yup.string().required('Last Name Is Required'), 
             email: Yup.string().email('Invalid Email').required('Email Is Required'), 
             password: Yup.string().required('Password Is Required') .min(6, 'The password needs more than 6 characters') 
         }),
-        onSubmit: valores =>{
-            console.log('Enviando');
-            console.log(valores);
+
+        onSubmit: async valores =>{
+            //console.log('Enviando');
+            //console.log(valores);
+
+            const { nombre, apellido, email, password } = valores
+
+            try {
+                const {data} = await NuevoUsuario ({
+                    variables : {
+                        input: {
+                            nombre,
+                            apellido,
+                            email,
+                            password,
+                        }
+                    }
+
+                });
+                console.log(data)
+            } catch (error) {
+                console.log(error);
+            }
+
         }
     });
 
