@@ -2,24 +2,24 @@
 # yarn lockfile v1
 
 
-"@apollo/client@^3.7.1":
-  "integrity" "sha512-xu5M/l7p9gT9Fx7nF3AQivp0XukjB7TM7tOd5wifIpI8RskYveL4I+rpTijzWrnqCPZabkbzJKH7WEAKdctt9w=="
-  "resolved" "https://registry.npmjs.org/@apollo/client/-/client-3.7.1.tgz"
-  "version" "3.7.1"
+"@apollo/client@^3.6.0":
+  "integrity" "sha512-2+UZoe6fCI3qG9lz8Kdt5ranEllRk8ewpt3ma6fWMjbpt7AP9sprnnoG7n6UmBcOpUTOvAAcaxBf8nByRcXn7g=="
+  "resolved" "https://registry.npmjs.org/@apollo/client/-/client-3.6.0.tgz"
+  "version" "3.6.0"
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
-    "@wry/context" "^0.7.0"
+    "@wry/context" "^0.6.0"
     "@wry/equality" "^0.5.0"
     "@wry/trie" "^0.3.0"
     "graphql-tag" "^2.12.6"
     "hoist-non-react-statics" "^3.3.2"
     "optimism" "^0.16.1"
     "prop-types" "^15.7.2"
-    "response-iterator" "^0.2.6"
     "symbol-observable" "^4.0.0"
-    "ts-invariant" "^0.10.3"
+    "ts-invariant" "^0.10.0"
     "tslib" "^2.3.0"
-    "zen-observable-ts" "^1.2.5"
+    "use-sync-external-store" "^1.0.0"
+    "zen-observable-ts" "^1.2.0"
 
 "@babel/runtime-corejs3@^7.10.2":
   "integrity" "sha512-HzjQ8+dzdx7dmZy4DQ8KV8aHi/74AjEbBGTFutBmg/pd3dY5/q1sfuOGPTFGEytlQhWoeVXqcK5BwMgIkRkNDQ=="
@@ -183,13 +183,6 @@
   "integrity" "sha512-LOmVnY1iTU2D8tv4Xf6MVMZZ+juIJ87Kt/plMijjN20NMAXGmH4u8bS1t0uT74cZ5gwpocYueV58YwyI8y+GKw=="
   "resolved" "https://registry.npmjs.org/@wry/context/-/context-0.6.1.tgz"
   "version" "0.6.1"
-  dependencies:
-    "tslib" "^2.3.0"
-
-"@wry/context@^0.7.0":
-  "integrity" "sha512-LcDAiYWRtwAoSOArfk7cuYvFXytxfVrdX7yxoUmK7pPITLk5jYh2F8knCwS7LjgYL8u1eidPlKKV6Ikqq0ODqQ=="
-  "resolved" "https://registry.npmjs.org/@wry/context/-/context-0.7.0.tgz"
-  "version" "0.7.0"
   dependencies:
     "tslib" "^2.3.0"
 
@@ -1681,7 +1674,7 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
 
-"react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@18.2.0":
+"react-dom@^17.0.2 || ^18.0.0-0", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -1761,11 +1754,6 @@
     "is-core-module" "^2.9.0"
     "path-parse" "^1.0.7"
     "supports-preserve-symlinks-flag" "^1.0.0"
-
-"response-iterator@^0.2.6":
-  "integrity" "sha512-pVzEEzrsg23Sh053rmDUvLSkGXluZio0qu8VT6ukrYuvtjVfCbDZH9d6PGXb8HZfzdNZt8feXv/jvUzlhRgLnw=="
-  "resolved" "https://registry.npmjs.org/response-iterator/-/response-iterator-0.2.6.tgz"
-  "version" "0.2.6"
 
 "reusify@^1.0.4":
   "integrity" "sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw=="
@@ -1966,7 +1954,7 @@
   "resolved" "https://registry.npmjs.org/toposort/-/toposort-2.0.2.tgz"
   "version" "2.0.2"
 
-"ts-invariant@^0.10.3":
+"ts-invariant@^0.10.0":
   "integrity" "sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ=="
   "resolved" "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.10.3.tgz"
   "version" "0.10.3"
@@ -2047,7 +2035,7 @@
   dependencies:
     "punycode" "^2.1.0"
 
-"use-sync-external-store@1.2.0":
+"use-sync-external-store@^1.0.0", "use-sync-external-store@1.2.0":
   "integrity" "sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA=="
   "resolved" "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
   "version" "1.2.0"
@@ -2118,7 +2106,7 @@
     "property-expr" "^2.0.4"
     "toposort" "^2.0.2"
 
-"zen-observable-ts@^1.2.5":
+"zen-observable-ts@^1.2.0":
   "integrity" "sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg=="
   "resolved" "https://registry.npmjs.org/zen-observable-ts/-/zen-observable-ts-1.2.5.tgz"
   "version" "1.2.5"

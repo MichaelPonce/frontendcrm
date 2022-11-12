@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useRouter } from 'next/router';
 import Layout from '../components/Layout'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import { useMutation, gql } from '@apollo/client';
+import { useMutation, gql, ApolloClient,} from '@apollo/client';
+
 
 
 const NEW_ACCOUNT = gql`
@@ -19,13 +21,22 @@ mutation NuevoUsuario($input: UsuarioInput) {
 
 const Newaccount = () => {
 
+    //State For Message
+
+    const [mensaje, guardarMensaje] = useState(null)
+
     // Mutation For Create New Users
 
     const [ NuevoUsuario ] = useMutation(NEW_ACCOUNT);
 
+    //Routing
+
+    const router =useRouter();
+
     // Form validation
 
     const formik = useFormik({
+        
         initialValues: {
             nombre: '',
             apellido: '',
@@ -59,16 +70,42 @@ const Newaccount = () => {
 
                 });
                 console.log(data)
+
+                //Usuario Creado Con Exito
+                guardarMensaje(`The User ${data.nuevoUsuario.nombre} has been created`);
+                setTimeout(() => {
+                    guardarMensaje(null);
+                    router.push('/login')
+                },
+                3000 );
+
+
+
             } catch (error) {
-                console.log(error);
+                guardarMensaje(error.message.replace('GraphQL error: ',''))
+
+                setTimeout(() => {
+                    guardarMensaje(null);
+                },
+                3000 );
             }
 
         }
     });
 
+    const mostrarMensaje =() => {
+        return(
+            <div className='bg-white text-slate-800 py-2 px-3 w-full my-3 max-w-sm text-center mx-auto'>
+                <p>{mensaje}</p>
+            </div>
+        )
+    }
+
     return (
         <>
         <Layout>
+            {mensaje && mostrarMensaje()}
+
             <h1 className="text-center text-2xl text-white font-light">Create New Account</h1>
             <div className='flex justify-center mt-5'>
                 <div className='w-full max-w-sm'>
